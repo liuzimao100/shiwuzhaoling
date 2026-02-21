@@ -1,0 +1,40 @@
+<view class="container">
+  <text class="title">发现的物品</text>
+  
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <text class="loading-text">加载中...</text>
+  </view>
+  
+  <!-- 空状态 -->
+  <view class="empty-container" wx:elif="{{!loading && items.length === 0}}">
+    <image class="empty-icon" src="/images/empty.png" mode="aspectFit"></image>
+    <text class="empty-text">暂无发现的物品</text>
+    <text class="empty-desc">点击下方按钮上传发现的物品</text>
+    <button class="btn btn-primary" bindtap="gotoUpload">去上传</button>
+  </view>
+  
+  <!-- 物品列表 -->
+  <view class="items-container" wx:else>
+    <view class="item-card" wx:for="{{items}}" wx:key="{{item.id}}">
+      <image class="item-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+      <view class="item-info">
+        <text class="item-id">物品ID: {{item.id}}</text>
+        <text class="item-time">{{item.createdAt}}</text>
+      </view>
+    </view>
+    
+    <!-- 图表按钮 -->
+    <view class="chart-button-container">
+      <button class="btn btn-secondary" bindtap="gotoChart">查看物品图表</button>
+    </view>
+  </view>
+  
+  <!-- 上拉加载 -->
+  <view class="load-more" wx:if="{{!loading && items.length > 0 && hasMore}}">
+    <text class="load-more-text">上拉加载更多</text>
+  </view>
+  <view class="load-more" wx:if="{{!loading && items.length > 0 && !hasMore}}">
+    <text class="load-more-text">已加载全部</text>
+  </view>
+</view>

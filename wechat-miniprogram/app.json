@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/finder/upload/upload",
+    "pages/finder/list/list",
+    "pages/finder/chart/chart",
+    "pages/loser/compare/compare"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "失物招领",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/finder/list/list",
+        "iconPath": "images/list.png",
+        "selectedIconPath": "images/list-active.png",
+        "text": "物品列表"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

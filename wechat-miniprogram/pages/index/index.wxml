@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="logo-container">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <text class="app-title">失物招领</text>
+    <text class="app-desc">让遗失的物品早日回家</text>
+  </view>
+  
+  <view class="btn-container">
+    <button class="btn btn-primary" bindtap="goToFinder">我是发现者</button>
+    <button class="btn btn-secondary" bindtap="goToLoser">我是丢失者</button>
+  </view>
+  
+  <view class="feature-container">
+    <view class="feature-item">
+      <image class="feature-icon" src="/images/finder-icon.png" mode="aspectFit"></image>
+      <text class="feature-text">发现物品，拍照上传</text>
+    </view>
+    <view class="feature-item">
+      <image class="feature-icon" src="/images/loser-icon.png" mode="aspectFit"></image>
+      <text class="feature-text">丢失物品，拍照寻找</text>
+    </view>
+  </view>
+</view>

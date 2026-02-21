@@ -1,0 +1,208 @@
+/* 丢失者对比页面样式 */
+.container {
+  padding: 20rpx;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+/* 相机容器样式 */
+.camera-container {
+  flex: 1;
+  position: relative;
+  background-color: #000;
+  border-radius: 12rpx;
+  overflow: hidden;
+  margin-bottom: 40rpx;
+}
+
+.camera {
+  width: 100%;
+  height: 100%;
+}
+
+.capture-btn {
+  position: absolute;
+  bottom: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4rpx solid white;
+}
+
+.capture-icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* 预览容器样式 */
+.preview-container {
+  flex: 1;
+  position: relative;
+  background-color: #000;
+  border-radius: 12rpx;
+  overflow: hidden;
+  margin-bottom: 40rpx;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 30rpx;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+/* 结果容器样式 */
+.result-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx 20rpx;
+}
+
+.result-card {
+  width: 100%;
+  max-width: 600rpx;
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 40rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.result-card.success {
+  border: 2rpx solid #3cc51f;
+}
+
+.result-card.error {
+  border: 2rpx solid #ff3b30;
+}
+
+.result-icon {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 30rpx;
+  border-radius: 50%;
+  padding: 20rpx;
+}
+
+.result-card.success .result-icon {
+  background-color: #3cc51f;
+}
+
+.result-card.error .result-icon {
+  background-color: #ff3b30;
+}
+
+.result-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.result-card.success .result-title {
+  color: #3cc51f;
+}
+
+.result-card.error .result-title {
+  color: #ff3b30;
+}
+
+.result-desc {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 30rpx;
+  line-height: 1.5;
+}
+
+/* 匹配物品样式 */
+.matched-item {
+  margin: 30rpx 0;
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  border-radius: 8rpx;
+}
+
+.matched-label {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.matched-image {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+  object-fit: cover;
+}
+
+.matched-info {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+/* 按钮样式 */
+.btn {
+  width: 240rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  border-radius: 8rpx;
+  margin: 10rpx;
+}
+
+.btn-primary {
+  background-color: #3cc51f;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #ff9500;
+  color: white;
+}
+
+/* 按钮容器样式 */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+  margin-top: 30rpx;
+}

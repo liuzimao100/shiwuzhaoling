@@ -1,0 +1,131 @@
+/* 发现者物品列表页面样式 */
+.container {
+  padding: 20rpx;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+/* 加载状态样式 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 200rpx 0;
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 空状态样式 */
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 150rpx 0;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 30rpx;
+  opacity: 0.5;
+}
+
+.empty-text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+
+.empty-desc {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 40rpx;
+  line-height: 1.5;
+}
+
+/* 物品列表样式 */
+.items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.item-card {
+  background-color: white;
+  border-radius: 12rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.item-card:active {
+  transform: scale(0.98);
+}
+
+.item-image {
+  width: 100%;
+  height: 400rpx;
+  object-fit: cover;
+}
+
+.item-info {
+  padding: 20rpx;
+}
+
+.item-id {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.item-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 上拉加载样式 */
+.load-more {
+  padding: 30rpx 0;
+  text-align: center;
+}
+
+.load-more-text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 图表按钮容器样式 */
+.chart-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 按钮样式 */
+.btn {
+  width: 240rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  border-radius: 8rpx;
+}
+
+.btn-primary {
+  background-color: #3cc51f;
+  color: white;
+}

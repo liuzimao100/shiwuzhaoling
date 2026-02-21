@@ -1,0 +1,37 @@
+<view class="container">
+  <text class="title">发现物品</text>
+  <text class="subtitle">请拍照上传发现的物品</text>
+  
+  <!-- 相机预览区域 -->
+  <view class="camera-container" wx:if="{{!photoPath}}">
+    <camera class="camera" device-position="back" flash="auto" binderror="error"></camera>
+    <button class="capture-btn" bindtap="takePhoto">
+      <image class="capture-icon" src="/images/capture.png" mode="aspectFit"></image>
+    </button>
+  </view>
+  
+  <!-- 照片预览区域 -->
+  <view class="preview-container" wx:else>
+    <image class="preview-image" src="{{photoPath}}" mode="aspectFill"></image>
+    <view class="preview-buttons">
+      <button class="btn btn-secondary" bindtap="retakePhoto">重拍</button>
+      <button class="btn btn-primary" bindtap="uploadPhoto">上传</button>
+    </view>
+  </view>
+  
+  <!-- 上传结果提示 -->
+  <view class="result-container" wx:if="{{uploadResult}}">
+    <view class="result-card" wx:if="{{uploadResult.success}}">
+      <image class="result-icon success" src="/images/success.png" mode="aspectFit"></image>
+      <text class="result-text success">上传成功！</text>
+      <text class="result-desc">{{uploadResult.message}}</text>
+      <button class="btn btn-primary" bindtap="gotoItemList">查看物品列表</button>
+    </view>
+    <view class="result-card" wx:else>
+      <image class="result-icon error" src="/images/error.png" mode="aspectFit"></image>
+      <text class="result-text error">上传失败</text>
+      <text class="result-desc">{{uploadResult.message}}</text>
+      <button class="btn btn-secondary" bindtap="retryUpload">重试</button>
+    </view>
+  </view>
+</view>
