@@ -8,6 +8,9 @@
     <button class="capture-btn" bindtap="takePhoto">
       <image class="capture-icon" src="/images/capture.png" mode="aspectFit"></image>
     </button>
+    <button class="album-btn" bindtap="chooseImage">
+      从相册选择
+    </button>
   </view>
   
   <!-- 照片预览区域 -->
@@ -15,6 +18,7 @@
     <image class="preview-image" src="{{photoPath}}" mode="aspectFill"></image>
     <view class="preview-buttons">
       <button class="btn btn-secondary" bindtap="retakePhoto">重拍</button>
+      <button class="btn btn-secondary" bindtap="chooseImage">从相册选择</button>
       <button class="btn btn-primary" bindtap="comparePhoto">对比</button>
     </view>
   </view>
@@ -32,6 +36,7 @@
         <image class="matched-image" src="{{compareResult.matchedItem.imageUrl}}" mode="aspectFill"></image>
         <text class="matched-info">物品ID: {{compareResult.matchedItem.id}}</text>
         <text class="matched-info">发现时间: {{compareResult.matchedItem.createdAt}}</text>
+        <text class="matched-info">发现者手机号: {{compareResult.matchedItem.phone}}</text>
       </view>
       
       <button class="btn btn-primary" bindtap="searchAgain">再次寻找</button>

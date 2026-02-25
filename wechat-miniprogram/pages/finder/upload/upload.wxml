@@ -8,6 +8,9 @@
     <button class="capture-btn" bindtap="takePhoto">
       <image class="capture-icon" src="/images/capture.png" mode="aspectFit"></image>
     </button>
+    <button class="album-btn" bindtap="chooseImage">
+      从相册选择
+    </button>
   </view>
   
   <!-- 照片预览区域 -->
@@ -15,6 +18,7 @@
     <image class="preview-image" src="{{photoPath}}" mode="aspectFill"></image>
     <view class="preview-buttons">
       <button class="btn btn-secondary" bindtap="retakePhoto">重拍</button>
+      <button class="btn btn-secondary" bindtap="chooseImage">从相册选择</button>
       <button class="btn btn-primary" bindtap="uploadPhoto">上传</button>
     </view>
   </view>

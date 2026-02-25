@@ -1,0 +1,67 @@
+<view class="container">
+  <!-- 未登录状态 -->
+  <view wx:if="{{!isLoggedIn}}" class="auth-container">
+    <view class="avatar-placeholder">
+      <text class="avatar-text">登录</text>
+    </view>
+    <text class="auth-title">欢迎使用失物招领平台</text>
+    <text class="auth-subtitle">登录后可享受更多功能</text>
+    <view class="auth-buttons">
+      <button class="login-btn" bindtap="navigateToLogin">登录</button>
+      <button class="register-btn" bindtap="navigateToRegister">注册</button>
+    </view>
+  </view>
+  
+  <!-- 已登录状态 -->
+  <view wx:else class="user-container">
+    <view class="user-header">
+      <view class="avatar" bindtap="handleAvatarTap">
+        <image wx:if="{{avatarUrl}}" class="avatar-image" src="{{avatarUrl}}" mode="aspectFill"></image>
+        <text wx:else class="avatar-text">{{userInfo.username.charAt(0).toUpperCase()}}</text>
+        <view class="avatar-edit-hint">
+          <text class="edit-icon">+</text>
+        </view>
+      </view>
+      <view class="user-info">
+        <text class="username">{{userInfo.username}}</text>
+        <text class="phone">{{userInfo.phone}}</text>
+      </view>
+    </view>
+    
+    <view class="menu-list">
+      <view class="menu-item" bindtap="gotoMyPublish">
+        <text class="menu-icon">📦</text>
+        <text class="menu-text">我的发布</text>
+        <text class="menu-arrow">›</text>
+      </view>
+      <view class="menu-item" bindtap="gotoMyClaim">
+        <text class="menu-icon">🔍</text>
+        <text class="menu-text">我的认领</text>
+        <text class="menu-arrow">›</text>
+      </view>
+      <view class="menu-item" bindtap="gotoSettings">
+        <text class="menu-icon">⚙️</text>
+        <text class="menu-text">设置</text>
+        <text class="menu-arrow">›</text>
+      </view>
+      <view class="menu-item" bindtap="gotoAbout">
+        <text class="menu-icon">ℹ️</text>
+        <text class="menu-text">关于我们</text>
+        <text class="menu-arrow">›</text>
+      </view>
+    </view>
+    
+    <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+  </view>
+  
+  <!-- 头像放大预览弹窗 -->
+  <view class="avatar-preview-modal" wx:if="{{showAvatarPreview}}" bindtap="closeAvatarPreview">
+    <view class="preview-content" catchtap="preventClose">
+      <image class="preview-avatar" src="{{avatarUrl}}" mode="aspectFit"></image>
+      <view class="preview-actions">
+        <button class="preview-btn" bindtap="chooseAvatar">更换头像</button>
+        <button class="preview-btn preview-btn-cancel" bindtap="closeAvatarPreview">关闭</button>
+      </view>
+    </view>
+  </view>
+</view>

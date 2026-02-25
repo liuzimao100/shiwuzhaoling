@@ -1,40 +1,48 @@
 <view class="container">
-  <text class="title">发现的物品</text>
+  <view class="header">
+    <text class="title">发现的物品</text>
+    <text class="subtitle">共 {{items.length}} 件物品等待认领</text>
+  </view>
   
-  <!-- 加载状态 -->
   <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
     <text class="loading-text">加载中...</text>
   </view>
   
-  <!-- 空状态 -->
   <view class="empty-container" wx:elif="{{!loading && items.length === 0}}">
-    <image class="empty-icon" src="/images/empty.png" mode="aspectFit"></image>
-    <text class="empty-text">暂无发现的物品</text>
-    <text class="empty-desc">点击下方按钮上传发现的物品</text>
-    <button class="btn btn-primary" bindtap="gotoUpload">去上传</button>
+    <view class="empty-icon-wrapper">
+      <text class="empty-icon">📦</text>
+    </view>
+    <text class="empty-title">暂无发现的物品</text>
+    <text class="empty-desc">发现物品后，拍照上传到这里\n帮助失主找回丢失的物品</text>
+    <button class="upload-btn" bindtap="gotoUpload">
+      <text class="btn-icon">📷</text>
+      <text class="btn-text">去上传</text>
+    </button>
   </view>
   
-  <!-- 物品列表 -->
-  <view class="items-container" wx:else>
-    <view class="item-card" wx:for="{{items}}" wx:key="{{item.id}}">
-      <image class="item-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
-      <view class="item-info">
-        <text class="item-id">物品ID: {{item.id}}</text>
-        <text class="item-time">{{item.createdAt}}</text>
+  <view class="list-container" wx:else>
+    <view class="items-grid">
+      <view class="item-card" wx:for="{{items}}" wx:key="{{item.id}}">
+        <view class="item-image-wrapper">
+          <image class="item-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+        </view>
+        <view class="item-info">
+          <text class="item-id">编号: {{item.id}}</text>
+          <text class="item-time">{{item.createdAt}}</text>
+        </view>
       </view>
     </view>
     
-    <!-- 图表按钮 -->
-    <view class="chart-button-container">
-      <button class="btn btn-secondary" bindtap="gotoChart">查看物品图表</button>
+    <view class="bottom-actions">
+      <button class="action-btn upload" bindtap="gotoUpload">
+        <text class="action-icon">📷</text>
+        <text class="action-text">上传物品</text>
+      </button>
+      <button class="action-btn chart" bindtap="gotoChart">
+        <text class="action-icon">📊</text>
+        <text class="action-text">查看统计</text>
+      </button>
     </view>
-  </view>
-  
-  <!-- 上拉加载 -->
-  <view class="load-more" wx:if="{{!loading && items.length > 0 && hasMore}}">
-    <text class="load-more-text">上拉加载更多</text>
-  </view>
-  <view class="load-more" wx:if="{{!loading && items.length > 0 && !hasMore}}">
-    <text class="load-more-text">已加载全部</text>
   </view>
 </view>

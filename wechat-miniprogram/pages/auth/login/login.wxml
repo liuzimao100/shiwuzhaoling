@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="header">
+    <text class="title">用户登录</text>
+    <text class="subtitle">欢迎回到失物招领平台</text>
+  </view>
+  
+  <view class="form">
+    <view class="form-item">
+      <text class="label">用户名</text>
+      <input 
+        class="input" 
+        placeholder="请输入用户名" 
+        placeholder-class="placeholder" 
+        value="{{username}}" 
+        bindinput="handleUsernameInput"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">密码</text>
+      <view class="input-wrapper">
+        <input 
+          class="input" 
+          placeholder="请输入密码" 
+          placeholder-class="placeholder" 
+          value="{{password}}" 
+          bindinput="handlePasswordInput"
+          password="{{!showPassword}}"
+        />
+        <text class="toggle-password" bindtap="togglePassword">
+          {{showPassword ? '隐藏' : '显示'}}
+        </text>
+      </view>
+    </view>
+    
+    <button 
+      class="login-btn" 
+      bindtap="handleLogin"
+      disabled="{{!canLogin}}"
+    >
+      登录
+    </button>
+    
+    <view class="register-link">
+      <text>还没有账号？</text>
+      <text class="link" bindtap="navigateToRegister">去注册</text>
+    </view>
+  </view>
+</view>
