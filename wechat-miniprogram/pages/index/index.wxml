@@ -1,0 +1,44 @@
+<view class="container">
+  <!-- 顶部装饰 -->
+  <view class="top-decoration"></view>
+  
+  <!-- 主内容区 -->
+  <view class="content">
+    <!-- 应用标识 -->
+    <view class="app-brand">
+      <view class="brand-icon">
+        <text class="brand-emoji">🔍</text>
+      </view>
+      <text class="app-title">失物招领</text>
+      <text class="app-slogan">让遗失的物品早日回家</text>
+    </view>
+    
+    <!-- 功能卡片 -->
+    <view class="features-section">
+      <view class="feature-card finder-card" bindtap="goToFinder">
+        <view class="card-icon">
+          <text class="icon-emoji">📦</text>
+        </view>
+        <view class="card-content">
+          <text class="card-title">发现物品</text>
+          <text class="card-desc">拍照上传，帮助失主</text>
+        </view>
+        <view class="card-arrow">›</view>
+      </view>
+      
+      <view class="feature-card loser-card" bindtap="goToLoser">
+        <view class="card-icon">
+          <text class="icon-emoji">🔍</text>
+        </view>
+        <view class="card-content">
+          <text class="card-title">丢失物品</text>
+          <text class="card-desc">拍照寻找，快速找回</text>
+        </view>
+        <view class="card-arrow">›</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 底部装饰 -->
+  <view class="bottom-decoration"></view>
+</view>

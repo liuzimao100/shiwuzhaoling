@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="header">
+    <text class="title">我的发布</text>
+    <text class="subtitle">共 {{items.length}} 件我发布的物品</text>
+  </view>
+
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <view class="empty-container" wx:elif="{{!loading && items.length === 0}}">
+    <view class="empty-icon-wrapper">
+      <text class="empty-icon">📦</text>
+    </view>
+    <text class="empty-title">暂无我的发布</text>
+    <text class="empty-desc">在“发现物品”中上传的物品\n会显示在这里方便管理</text>
+  </view>
+
+  <view class="list-container" wx:else>
+    <view class="items-grid">
+      <view class="item-card" wx:for="{{items}}" wx:key="{{item.id}}">
+        <view class="item-image-wrapper">
+          <image class="item-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+        </view>
+        <view class="item-info">
+          <text class="item-id">编号: {{item.id}}</text>
+          <text class="item-time">{{item.createdAt}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

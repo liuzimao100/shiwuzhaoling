@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="card">
+    <view class="title">关于失物招领小程序</view>
+    <view class="text">
+      <text>这是一个用于校园或社区的失物招领平台，帮助发现者快速上传失物信息，丢失者通过拍照比对寻找自己的物品。</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="subtitle">主要功能</view>
+    <view class="text">
+      <text>• 发现者拍照上传发现的物品</text>
+    </view>
+    <view class="text">
+      <text>• 丢失者通过图片比对寻找物品</text>
+    </view>
+    <view class="text">
+      <text>• 查看物品列表与个人发布记录</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="subtitle">使用提示</view>
+    <view class="text">
+      <text>请尽量拍摄清晰、无遮挡的物品照片，并在物品归还后及时与对方确认，以保障双方权益。</text>
+    </view>
+  </view>
+</view>

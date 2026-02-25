@@ -1,0 +1,30 @@
+.container {
+  padding: 24rpx;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx 28rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+  margin-bottom: 20rpx;
+}
+
+.title {
+  font-size: 34rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 12rpx;
+}
+
+.text {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 8rpx;
+}

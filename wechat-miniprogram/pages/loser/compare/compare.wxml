@@ -1,0 +1,53 @@
+<view class="container">
+  <text class="title">寻找物品</text>
+  <text class="subtitle">请拍照上传您丢失的物品</text>
+  
+  <!-- 相机预览区域 -->
+  <view class="camera-container" wx:if="{{!photoPath && !compareResult}}">
+    <camera class="camera" device-position="back" flash="auto" binderror="error"></camera>
+    <button class="capture-btn" bindtap="takePhoto">
+      <image class="capture-icon" src="/images/capture.png" mode="aspectFit"></image>
+    </button>
+    <button class="album-btn" bindtap="chooseImage">
+      从相册选择
+    </button>
+  </view>
+  
+  <!-- 照片预览区域 -->
+  <view class="preview-container" wx:elif="{{photoPath && !compareResult}}">
+    <image class="preview-image" src="{{photoPath}}" mode="aspectFill"></image>
+    <view class="preview-buttons">
+      <button class="btn btn-secondary" bindtap="retakePhoto">重拍</button>
+      <button class="btn btn-secondary" bindtap="chooseImage">从相册选择</button>
+      <button class="btn btn-primary" bindtap="comparePhoto">对比</button>
+    </view>
+  </view>
+  
+  <!-- 对比结果区域 -->
+  <view class="result-container" wx:else>
+    <view class="result-card success" wx:if="{{compareResult.success}}">
+      <image class="result-icon" src="/images/success.png" mode="aspectFit"></image>
+      <text class="result-title">找到匹配物品！</text>
+      <text class="result-desc">我们找到了与您丢失物品相似的物品</text>
+      
+      <!-- 匹配的物品信息 -->
+      <view class="matched-item">
+        <text class="matched-label">匹配的物品：</text>
+        <image class="matched-image" src="{{compareResult.matchedItem.imageUrl}}" mode="aspectFill"></image>
+        <text class="matched-info">物品ID: {{compareResult.matchedItem.id}}</text>
+        <text class="matched-info">发现时间: {{compareResult.matchedItem.createdAt}}</text>
+        <text class="matched-info">发现者手机号: {{compareResult.matchedItem.phone}}</text>
+      </view>
+      
+      <button class="btn btn-primary" bindtap="searchAgain">再次寻找</button>
+    </view>
+    
+    <view class="result-card error" wx:else>
+      <image class="result-icon" src="/images/error.png" mode="aspectFit"></image>
+      <text class="result-title">未找到匹配物品</text>
+      <text class="result-desc">{{compareResult.message || '很抱歉，没有找到与您丢失物品相似的物品'}}</text>
+      <button class="btn btn-secondary" bindtap="searchAgain">重新拍照</button>
+      <button class="btn btn-primary" bindtap="gotoItemList">查看所有物品</button>
+    </view>
+  </view>
+</view>
